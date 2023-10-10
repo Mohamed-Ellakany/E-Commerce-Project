@@ -1,0 +1,94 @@
+.header{
+position: relative;
+text-align: center;
+color: #fe980f;
+text-transform: uppercase;
+font-weight: 600;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.header::after{
+  content: '';
+position: absolute;
+width: calc(calc(100% - 150px)/2);
+height: 2px;
+background-color: #f1f1f1;
+right: 0;
+top: 50%;
+transform: translateY(-50%);
+
+}
+
+.header::before{
+  content: '';
+
+position: absolute;
+width: calc(calc(100% - 150px)/2);
+height: 2px;
+background-color: #f1f1f1;
+left: 0;
+top: 50%;
+transform: translateY(-50%);
+}
+@media only screen and (max-width:600px) {
+  .header::after,.header::before{
+    width: 30%;
+  }
+}
+
+.btn-sec{
+  background-color: #f4f4ec;
+  color: #686763;
+}
+
+.price{
+  color: #fe980f;
+  font-weight: 600;
+}
+.description{
+  color: #686866;
+}
+.item {
+  cursor: pointer;
+  border: 1px solid #eee;
+  transition: all .1s linear;
+}
+.item:hover{
+  border: 3px solid #fe980f !important;
+}
+.item:hover button
+{
+
+background-color: #fe980f;
+color: #fff;
+}
+.item img {
+  transition: scale .1s;
+  margin-bottom: 5px;
+}
+.item:hover img
+{
+  scale: 1.1;
+}
+
+
+.brands
+{
+  max-height: 400px;
+  overflow-y: scroll;
+}
+a{
+  text-decoration: none;
+}
+.heartIcon{
+  position: relative;
+  color: #fe980f;
+  z-index: 222;
+  font-size: 24px ;
+  transition: all .3s;
+}
+.heartIcon:hover {
+
+font-size: 28px ;
+}

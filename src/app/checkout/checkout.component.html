@@ -1,0 +1,28 @@
+<div class="container my-5">
+  <form
+    class="form"
+    [formGroup]="shippingAddress"
+    (ngSubmit)="handleSubmit(shippingAddress)"
+  >
+    <label for="details" class="main">details</label>
+    <input
+      type="text"
+      id="details"
+      class="form-control"
+      formControlName="details"
+    />
+
+    <label for="phone" class="main">phone</label>
+    <input type="tel" id="phone" class="form-control" formControlName="phone" />
+
+    <label for="city " class="main">city</label>
+    <input type="text" id="city" class="form-control" formControlName="city" />
+
+    <button 
+      class="btn bg-main my-3 text-white d-block m-auto px-5"
+      type="submit "
+    >
+      payment
+    </button>
+  </form>
+</div>

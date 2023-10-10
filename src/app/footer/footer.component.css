@@ -1,0 +1,25 @@
+footer {
+  background-color: #efeee9;
+}
+footer h6 {
+  color: #8c898a;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cursor {
+  cursor: pointer;
+}
+li {
+  transition: color 0.5s;
+}
+li:hover {
+  color: #fe980f;
+}
+.input-group-text{
+  background-color: #fe980f;
+  
+}
+

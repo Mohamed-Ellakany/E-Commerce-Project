@@ -1,0 +1,190 @@
+<section class="">
+  <div class="container px-lg-5">
+    <div class="row px-5 align-items-center justify-content-center">
+      <div class="col-md-5">
+        <h2 class="my-3 fw-light text-secondary">Login To Your account</h2>
+        <form [formGroup]="signInForm" (ngSubmit)="signInSubmit(signInForm)">
+          <input
+            type="text"
+            class="form-control my-3"
+            placeholder="email"
+            formControlName="email"
+          />
+          <input
+            type="password"
+            class="form-control my-3"
+            placeholder="password"
+            formControlName="password"
+          />
+
+          <!-- <input type="checkbox" id="keep" /><label for="keep" class="ms-2"
+            >keep me signed in</label
+          > -->
+          <button
+            [disabled]="signInForm.invalid"
+            type="submit"
+            class="text-white px-4 btn rounded-0 d-block my-3"
+          >
+            Login
+          </button>
+          <a routerLink="/forgotPassword"><p>forgot password ?</p></a>
+        </form>
+      </div>
+      <div class="col-md-2">
+        <div
+          class="mx-auto text-white circle rounded-circle d-flex justify-content-center align-items-center"
+        >
+          OR
+        </div>
+      </div>
+      <div class="col-md-5">
+        <form
+          [formGroup]="regesterForm"
+          (ngSubmit)="alertRegister(regesterForm)"
+        >
+          <h2 class="my-3 fw-light text-secondary">New User Signup</h2>
+          <input
+            type="text"
+            formControlName="name"
+            class="form-control my-3"
+            placeholder="Name"
+          />
+          <div
+            *ngIf="
+              regesterForm.get('name')?.errors &&
+              regesterForm.get('name')?.touched
+            "
+            class="alert alert-danger"
+          >
+            <p
+              class="m-0"
+              *ngIf="regesterForm.get('name')?.getError('required')"
+            >
+              this is required
+            </p>
+            <p
+              class="m-0"
+              *ngIf="regesterForm.get('name')?.getError('minlength')"
+            >
+              this is most be more than 3
+            </p>
+          </div>
+
+          <input
+            type="text"
+            formControlName="email"
+            class="form-control my-3"
+            placeholder="Email Address"
+          />
+          <div
+            *ngIf="
+              regesterForm.get('email')?.errors &&
+              regesterForm.get('email')?.touched
+            "
+            class="alert alert-danger"
+          >
+            <p
+              class="m-0"
+              *ngIf="regesterForm.get('email')?.getError('required')"
+            >
+              this is required
+            </p>
+            <p class="m-0" *ngIf="regesterForm.get('email')?.getError('email')">
+              this is invalid mail
+            </p>
+          </div>
+
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control my-3"
+            placeholder="Password"
+          />
+          <div
+            *ngIf="
+              regesterForm.get('password')?.errors &&
+              regesterForm.get('password')?.touched
+            "
+            class="alert alert-danger"
+          >
+            <p
+              class="m-0"
+              *ngIf="regesterForm.get('password')?.getError('required')"
+            >
+              this is required
+            </p>
+            <p
+              class="m-0"
+              *ngIf="regesterForm.get('password')?.getError('minlength')"
+            >
+              minlength is 6
+            </p>
+          </div>
+
+          <input
+            type="password"
+            formControlName="rePassword"
+            class="form-control my-3"
+            placeholder="Repassword"
+          />
+          <div
+            *ngIf="
+              regesterForm.get('rePassword')?.errors &&
+              regesterForm.get('rePassword')?.touched
+            "
+            class="alert alert-danger"
+          >
+            <p
+              class="m-0"
+              *ngIf="regesterForm.get('rePassword')?.getError('required')"
+            >
+              this is required
+            </p>
+            <p
+              class="m-0"
+              *ngIf="
+                regesterForm.get('rePassword')?.getError('repasswordMatch')
+              "
+            >
+              this is not matched
+            </p>
+          </div>
+
+          <input
+            type="tel"
+            formControlName="phone"
+            class="form-control my-3"
+            placeholder="phone"
+          />
+          <div
+            *ngIf="
+              regesterForm.get('phone')?.errors &&
+              regesterForm.get('phone')?.touched
+            "
+            class="alert alert-danger"
+          >
+            <p
+              class="m-0"
+              *ngIf="regesterForm.get('phone')?.getError('required')"
+            >
+              this is required
+            </p>
+            <p
+              class="m-0"
+              *ngIf="regesterForm.get('phone')?.getError('pattern')"
+            >
+              this is invalid
+            </p>
+          </div>
+          <button
+            [disabled]="regesterForm.invalid"
+            class="text-white btn rounded-0 px-4 d-block my-3"
+          >
+            <span>Sign up</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

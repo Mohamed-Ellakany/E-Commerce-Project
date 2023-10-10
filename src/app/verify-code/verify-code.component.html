@@ -1,0 +1,13 @@
+<div class="container p-5">
+  <form [formGroup]="verifyForm" (ngSubmit)="verify(verifyForm)">
+
+    <input  type="text"  class="form-control " placeholder="code..." formControlName="resetCode" >
+    <div class="alert alert-danger my-2"   *ngIf="  verifyForm.get('resetCode')?.errors &&
+    verifyForm.get('resetCode')?.touched">
+don't valid spaces
+</div>
+  <button class="btn btn-warning text-white mt-3 ms-auto d-block px-5" type="submit" [disabled]="verifyForm.invalid">send code</button>
+
+  </form>
+  </div>
+

@@ -1,0 +1,32 @@
+.nav-item {
+  font-size: 14px;
+  color: #696763;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+@media only screen and (max-width: 768px ) and (min-width:576px){
+
+.nav-link{
+    text-align: center;
+
+}
+}
+
+
+
+i {
+  font-size: inherit;
+
+}
+.nav-item:hover .nav-link,
+.sec-nav-item:hover .sec-nav-link {
+  color: #fe980f !important;
+}
+
+.sec-nav-link {
+  text-decoration: none;
+  color: #696763;
+  font-size: 1.25rem;
+  transition: color 0.5s;
+  cursor: pointer;
+}

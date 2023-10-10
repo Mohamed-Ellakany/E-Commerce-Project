@@ -1,0 +1,17 @@
+.maincolor {
+  color: #fe980f;
+}
+img {
+  aspect-ratio: 4/3;
+}
+.card,
+.card-img {
+  transition: all 0.5s;
+}
+.card:hover {
+  border-color: #fe980f;
+}
+
+.card:hover .card-img {
+  scale: 1.1;
+}

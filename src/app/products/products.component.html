@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <app-slider></app-slider>
+
+    <div class="col-md-3">
+      <h4 class="header text-uppercase">category</h4>
+      <div class="list-group my-2 category">
+        <a
+          class="list-group-item list-group-item-action"
+          *ngFor="let item of category"
+          >{{ item.name }}</a
+        >
+      </div>
+      <h4 class="header text-uppercase">brands</h4>
+      <div class="list-group my-2 brands">
+        <a
+          class="list-group-item list-group-item-action"
+          *ngFor="let item of brands"
+          >{{ item.name }}</a
+        >
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <h4 class="header">products</h4>
+
+      <div class="row mb-3 g-3">
+        <div class="col-md-4" *ngFor="let product of products">
+          <div class="item text-center p-3 overflow-hidden position-relative">
+            <a
+              (click)="postToWishlist(product._id)"
+              class="heartIcon position-absolute start-50 translate-middle-x"
+            >
+              <i class="fa-regular fa-heart"></i
+            ></a>
+            <a [routerLink]="['/productDetails', product._id]">
+              <img [src]="product.imageCover" class="w-100 my-2" alt="" />
+              <div>
+                <h3 class="price h4 my-2">{{ product.price }} $</h3>
+                <p class="description">
+                  {{ product.title.split(" ").slice(0, 3).join(" ") }}
+                </p>
+              </div>
+            </a>
+            <button
+              class="py-lg-1 px-lg-3 btn btn-sec border-0 rounded-0"
+              (click)="postInCart(product._id)"
+            >
+              <i class="fa fa-shopping-cart me-2"></i><span>Add To Cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

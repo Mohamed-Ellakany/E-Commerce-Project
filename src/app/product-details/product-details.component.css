@@ -1,0 +1,14 @@
+.color{
+  color: #fe980f;
+}
+
+.btn-color
+{
+  border:2px solid #fe980f;
+
+}
+
+.btn-color:hover{
+  background-color: #fe980f ;
+  color :#fff
+}

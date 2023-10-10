@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-sm p-0">
+  <div class="container border border-top-0 border-start-0 border-end-0 py-3">
+    <a class="navbar-brand" href="#"
+      ><img src="assets/images/logo.png" alt=""
+    /></a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        <li class="nav-item mx-2" *ngIf="isLogin">
+          <a class="nav-link" routerLink="home"
+            ><i class="fas me-1 fa-user"></i> Home</a
+          >
+        </li>
+        <li class="nav-item mx-2" *ngIf="isLogin">
+          <a class="nav-link" routerLink="wishlist"
+            ><i class="fas me-1 fa-star"></i> wishlist</a
+          >
+        </li>
+        <li class="nav-item mx-2" *ngIf="isLogin">
+          <a class="nav-link" routerLink="category"
+            ><i class="fas me-1 fa-crosshairs"></i> Category</a
+          >
+        </li>
+        <li class="nav-item mx-2" *ngIf="isLogin">
+          <a class="nav-link" routerLink="brands"
+            ><i class="fas me-1 fa-crosshairs"></i> Brands</a
+          >
+        </li>
+        <li class="nav-item mx-2" *ngIf="isLogin">
+          <a class="nav-link" routerLink="cart"
+            ><i class="fas me-1 fa-shopping-cart"></i> Cart</a
+          >
+        </li>
+        <li class="nav-item mx-2" *ngIf="!isLogin">
+          <a class="nav-link" routerLink="regestration"
+            ><i class="fas me-1 fa-lock"></i> Login</a
+          >
+        </li>
+        <li class="nav-item mx-2" *ngIf="isLogin" (click)="logout()">
+          <a class="nav-link"><i class="fas me-1 fa-lock"></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,17 @@
+<div class="container p-5">
+  <div class="row align-items-center gx-4">
+    <div class="col-md-5">
+<img [src]="productData?.imageCover" class="w-100" alt="">
+
+    </div>
+    <div class="col-md-7">
+<h2>{{productData?.title}}</h2>
+<span class="text-success">{{productData?.category.name}}</span>
+<p>{{productData?.description}}</p>
+
+<h4 class="color fw-bold h2   ">{{productData?.price}} $</h4>
+
+<button class="w-100 btn btn-color my-3" (click)="postInCart(productData?._id)">Add To Cart</button>
+    </div>
+  </div>
+</div>

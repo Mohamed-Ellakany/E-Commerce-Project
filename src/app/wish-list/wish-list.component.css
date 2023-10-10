@@ -1,0 +1,15 @@
+.container{
+  min-height:80vh;
+}
+ .main{
+  color: #FE980F;
+  font-weight: 600;
+ }
+.bg-main{
+background-color: #FE980F;
+color: white;
+}
+.bg-main:hover
+{
+  background-color: #c6750c;
+}
